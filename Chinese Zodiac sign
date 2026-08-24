@@ -1,0 +1,42 @@
+def main():
+    print("=" * 50)
+    print("CHINESE ZODIAC SIGN FINDER")
+    print("=" * 50)
+    
+    year_input = input("Enter your birth year: ")
+    
+    try:
+        birth_year = int(year_input)
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+        return
+    
+    if birth_year < 1900:
+        print("Invalid Year, it should not be earlier than 1900")
+        return
+    
+    zodiac_index = (birth_year - 1900) % 12
+    
+    zodiac_signs = [
+        ("Rat", "鼠", "Shǔ"),
+        ("Ox", "牛", "Niú"),
+        ("Tiger", "虎", "Hǔ"),
+        ("Rabbit", "兔", "Tù"),
+        ("Dragon", "龙", "Lóng"),
+        ("Snake", "蛇", "Shé"),
+        ("Horse", "马", "Mǎ"),
+        ("Goat", "羊", "Yáng"),
+        ("Monkey", "猴", "Hóu"),
+        ("Rooster", "鸡", "Jī"),
+        ("Dog", "狗", "Gǒu"),
+        ("Pig", "猪", "Zhū")
+    ]
+    
+    english_name, chinese_char, pinyin = zodiac_signs[zodiac_index]
+    
+    print("-" * 50)
+    print(f"Your Chinese Zodiac Sign is : {english_name} ({chinese_char} / {pinyin})")
+    print("-" * 50)
+
+if __name__ == "__main__":
+    main()
